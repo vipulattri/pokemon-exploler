@@ -1,0 +1,166 @@
+/* Reset and base styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  height: 100%;
+  width: 100%;
+  
+}
+.App{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ 
+}
+
+.header {
+  text-align: center;
+  padding: 1rem;
+  width: 100vw;
+  background-color: #ffcb05;
+  color: #3b4cca;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+.search-bar,
+.type-filter {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  width: 220px;
+  max-width: 90%;
+}
+
+/* Pokemon List and Card */
+.pokemon-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.pokemon-card {
+  background: #ffffff;
+  border-radius: 12px;
+  text-align: center;
+  padding: 0.75rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pokemon-card img {
+  width: 96px;
+  height: 96px;
+}
+
+.pokemon-card h2 {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 1.1rem;
+  color: #3b4cca;
+}
+
+.pokemon-card p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+/* Info Text */
+.info {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+
+.error {
+  color: red;
+}
+
+/* ---------- RESPONSIVE ENHANCEMENTS ---------- */
+
+/* Tablet screens */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 1.75rem;
+  }
+
+  .pokemon-card {
+    padding: 0.5rem;
+  }
+
+  .pokemon-card h2 {
+    font-size: 1rem;
+  }
+
+  .pokemon-card p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 600px) {
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    margin: 1rem 0.5rem;
+  }
+
+  .search-bar,
+  .type-filter {
+    width: 100%;
+  }
+
+  .pokemon-list {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .pokemon-card img {
+    width: 72px;
+    height: 72px;
+  }
+
+  .info {
+    font-size: 1rem;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 400px) {
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .pokemon-list {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .pokemon-card img {
+    width: 64px;
+    height: 64px;
+  }
+}
